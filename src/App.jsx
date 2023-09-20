@@ -17,14 +17,24 @@ const App = () => {
           recoleco
         </h1>
 
-        <div className="flex justify-center">
-          <IconLink to="/" icon={faHouse} label="Home" />
-          <IconLink to="/money" icon={faWallet} label="Wallet" />
-          <IconLink to="/health" icon={faWeightScale} label="Weight" />
+        <div className="mt-6">
+          <div className="flex justify-center">
+            <IconLink to="/" icon={faHouse} label="Home" />
+            <IconLink to="/money" icon={faWallet} label="Wallet" />
+            <IconLink to="/health" icon={faWeightScale} label="Weight" />
+          </div>
         </div>
 
-
-        <Assets />
+        <div className="text-center text-lg font-bold m-3 bg-gray-200 rounded p-4">
+          <div className="flex flex-row justify-between">
+            <div>
+              Asset
+            </div>
+            <div>
+              <Assets />
+            </div>
+          </div>
+        </div>
         <PersonalIndex />
 
         <Routes>

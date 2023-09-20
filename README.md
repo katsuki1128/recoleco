@@ -17,6 +17,6 @@ npm i react-router-dom
 ## Firebaseライブラリをインストール
 npm i firebase
 
-## chatr.jsのインストール
+## chatr.jsのインストールする
 npm install --save chart.js react-chartjs-2
 

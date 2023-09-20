@@ -1,37 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { Money } from "./pages/Money"
+import { Health } from "./pages/Health";
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Assets } from "./pages/Assets";
+import { PersonalIndex } from "./pages/PersonalIndex";
 
+
+const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <h1 className="bg-teal-400">Vite + React</h1>
-      <h1 className="bg-teal-400">Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
 
-export default App
+    < div className="container mx-auto px-4" >
+      <BrowserRouter>
+        <h1 className="text-center font-bold mb-0">recoleco</h1>
+
+        <ul className="list-decimal pl-5">
+          <li className="mb-2">
+            <Link
+              to="/money"
+              className="text-blue-500 hover:underline"
+            >
+              家計簿
+            </Link>
+          </li>
+          <li className="mb-2">
+            <Link
+              to="/health"
+              className="text-blue-500 hover:underline"
+            >
+              健康管理
+            </Link>
+          </li>
+        </ul>
+        <Routes>
+          <Route path="/money" element={<Money />} />
+          <Route path="/health" element={<Health />} />
+        </Routes>
+        <Assets />
+        <PersonalIndex />
+      </BrowserRouter>
+    </div >
+  );
+};
+
+export default App;

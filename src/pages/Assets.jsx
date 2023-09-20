@@ -4,7 +4,6 @@ import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 
 export const Assets = () => {
 
-    const [asset, setAsset] = useState([]);
     const [total, setTotal] = useState({
         bank_mitsui: 0,
         bank_fukuoka: 0,
@@ -12,12 +11,11 @@ export const Assets = () => {
         family_finance: 0
     });
 
-
     useEffect(() => {
         const q = query(collection(db, "Money"), orderBy("timestamp", "asc"));
         const unsub = onSnapshot(q, (querySnapshot) => {
             const data = querySnapshot.docs.map((x) => x.data());
-            setAsset(data);
+            console.log(data);
 
             // 各フィールドの合計を計算
             const sum = data.reduce((accumulator, currentValue) => {
@@ -41,7 +39,7 @@ export const Assets = () => {
     return (
         <>
             <>
-                <p>総計 : ¥{`${(total.bank_mitsui + total.bank_fukuoka + total.wallet + total.family_finance).toLocaleString()}`}</p>
+                <p> ¥{`${(total.bank_mitsui + total.bank_fukuoka + total.wallet + total.family_finance).toLocaleString()}`}</p>
             </>
         </>
     );

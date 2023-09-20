@@ -13,7 +13,6 @@ const App = () => {
 
     < div className="container mx-auto px-4" >
       <BrowserRouter>
-
         <h1 className="text-center text-lg font-bold m-3 bg-gray-200 rounded p-4">
           recoleco
         </h1>
@@ -25,13 +24,14 @@ const App = () => {
         </div>
 
 
+        <Assets />
+        <PersonalIndex />
 
         <Routes>
           <Route path="/money" element={<Money />} />
           <Route path="/health" element={<Health />} />
         </Routes>
-        <Assets />
-        <PersonalIndex />
+
       </BrowserRouter>
 
     </div >

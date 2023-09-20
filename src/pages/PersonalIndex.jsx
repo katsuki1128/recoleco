@@ -126,7 +126,6 @@ export const PersonalIndex = () => {
 
     return (
         <>
-            <p>ヘルスデータ</p>
             {/* {JSON.stringify(personal)} */}
             <Line data={chartData} options={chartOptions} />
         </>

@@ -11,7 +11,6 @@ export const Assets = () => {
         const unsub = onSnapshot(q, (querySnapshot) => {
             const latestData = querySnapshot.docs[0]?.data();
 
-
             // 最新のデータの各プロパティの合計を計算
             const sum = latestData.bank_mitsui + latestData.bank_fukuoka + latestData.wallet + latestData.family_finance;
             setTotal(sum);

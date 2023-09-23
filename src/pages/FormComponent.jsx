@@ -10,18 +10,18 @@ export const FormComponent = ({ formFields, collectionName }) => {
     });
 
 
-    const handleFocus = (e) => {
-        const plainNumber = e.target.value.replace(/,/g, '');
-        e.target.value = plainNumber;
-        // console.log(e.target.value);
-    };
+    // const handleFocus = (e) => {
+    //     const plainNumber = e.target.value.replace(/,/g, '');
+    //     e.target.value = plainNumber;
+    //     // console.log(e.target.value);
+    // };
 
-    const handleBlur = (e) => {
-        console.log("感知しました");
-        const formattedValue = parseFloat(e.target.value).toLocaleString();
-        setValue(field.name, formattedValue);
-        console.log(formattedValue);
-    };
+    // const handleBlur = (e) => {
+    //     console.log("感知しました");
+    //     const formattedValue = parseFloat(e.target.value).toLocaleString();
+    //     setValue(field.name, formattedValue);
+    //     console.log(formattedValue);
+    // };
 
 
     const onSubmit = async (data) => {
@@ -59,10 +59,10 @@ export const FormComponent = ({ formFields, collectionName }) => {
                             <div className="field-input">
                                 <input
                                     type={field.type || "number"}
-                                    onFocus={handleFocus}
-                                    onBlur={handleBlur}
+                                    // onFocus={handleFocus}
+                                    // onBlur={handleBlur}
                                     className="text-right bg-gray-200 "
-                                    {...register(field.name, { required: true, pattern: /\d/ })}
+                                    {...register(field.name, { required: true, pattern: /^\d+(\.\d{0,1})?$/ })}
                                 />
                             </div>
                         </div>

@@ -28,7 +28,7 @@ const App = () => {
         <div className="text-center text-lg font-bold m-3 bg-gray-200 rounded p-4">
           <div className="flex flex-row justify-between">
             <div>
-              Asset
+              Stars
             </div>
             <div>
               <Assets />

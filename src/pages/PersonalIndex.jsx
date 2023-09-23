@@ -43,23 +43,9 @@ export const PersonalIndex = () => {
     }, []);
 
     const labels = personal.map(data =>
-        new Date(data.timestamp.seconds * 1000).toLocaleDateString()
+        new Date(data.timestamp.seconds * 1000).toLocaleDateString(undefined, { month: '2-digit', day: '2-digit' })
     );
 
-    // const dataset = {
-    //     label: '体脂肪率',
-    //     data: personal.map(data => data.fatPercentage),
-    //     fill: false,
-    //     borderColor: 'rgb(75, 192, 192)',
-    //     tension: 0.1
-    // };
-
-    // console.log(dataset.data);
-
-    // const chartData = {
-    //     labels: labels,
-    //     datasets: [dataset]
-    // };
     const fatPercentageDataset = {
         label: '体脂肪率',
         data: personal.map(data => data.fatPercentage),
